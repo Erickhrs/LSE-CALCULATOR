@@ -1,0 +1,14 @@
+nav{
+    display: flex!important;
+    justify-content: center!important;
+}
+nav img{
+    cursor: pointer;
+}
+#root{
+    height: 70vh;
+    margin: 35px;
+    background-color: whitesmoke;
+    border-radius: 15px
+}
+
