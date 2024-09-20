@@ -20,13 +20,14 @@ nav img{
 
 #img{
     width: 40%;
-    background-image: url("https://www.digitaletextil.com.br/blog/wp-content/uploads/2023/01/blog_capa.png") !important;
+    background-image: url("https://www.digitaletextil.com.br/blog/wp-content/uploads/2023/01/blog_capa.png");
     background-repeat: no-repeat;
     background-size: cover;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     position: relative;
     overflow: hidden;
+    border-right: 2px solid var(--logoblue);
 }
 
 #product_info{
@@ -34,7 +35,6 @@ nav img{
   bottom: 0;
   font-size: 10px;
   text-align: left;
-  background-color: #0a8dffba;
   color: white;
   border-bottom-left-radius: 5px;
   padding: 0px 10px 10px 10px;
@@ -45,4 +45,30 @@ nav img{
   color: white;
   padding: 0;
   margin: 0;
+}
+
+.input_container #product_in{
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  margin: 10px;
+}
+#product_in select{
+    border: none;
+    background-color: var(--logoblue);
+    color: white;
+    padding: 4px;
+    margin: 12px;
+}
+
+#calculator{
+    display: flex;
+    flex-direction: column;
+}
+#forms{
+    height: 80%;
+    margin: 12px;
+    width: 820px;
+    border-radius: 3px;
+    border: 1px solid #d9d9d9;
 }

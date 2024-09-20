@@ -14,3 +14,7 @@
 * {
     animation: fadeIn 1s ease-in-out;
 }
+:root {
+    --animate-duration: 1ms;
+    --animate-delay: 0s;
+  }
