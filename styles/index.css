@@ -70,5 +70,13 @@ nav img{
     margin: 12px;
     width: 820px;
     border-radius: 3px;
-    border: 1px solid #d9d9d9;
+    display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+#forms div{
+    display: flex;
+    gap: 1px;
+    flex-direction: column;
 }
