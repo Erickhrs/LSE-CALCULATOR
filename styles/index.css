@@ -38,6 +38,7 @@ nav img{
   color: white;
   border-bottom-left-radius: 5px;
   padding: 0px 10px 10px 10px;
+  background-color: var(--logoblue);
 }
 
 #product_info #title{

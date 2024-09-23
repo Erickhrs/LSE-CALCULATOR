@@ -40,7 +40,7 @@
                 </select>
             </div>
 
-            <forms class="forms" id="eb">
+            <form class="forms" id="eb">
                 <div>
                     <label for="width">Largura</label>
                     <select name="width" id="width_in">
@@ -159,8 +159,8 @@
                     <input type="number" name="units">
                 </div>
                 <button type="submit">Calcular</button>
-            </forms>
-            <forms class="forms" id="fg">
+            </form>
+            <form class="forms" id="fg">
                 <div>
                     <label for="width">Largura</label>
                     <select name="width" id="width_in">
@@ -257,9 +257,10 @@
                     <label for="units">Unidades</label>
                     <input type="number" name="units">
                 </div>
-                <button type="submit">Calcular</button>
-            </forms>
-            <forms class="forms" id="pe">
+                <input name="product" value="ep" style="display: none;">
+                <button type="submit" value="ep">Calcular</button>
+            </form>
+            <form class="forms" id="pe">
                 <div>
                     <label for="width">Largura</label>
                     <select name="width" id="width_in">
@@ -375,7 +376,7 @@
                     <input type="number" name="units">
                 </div>
                 <button type="submit">Calcular</button>
-            </forms>
+            </form>
         </div>
     </main>
     <div id="result_container">
@@ -384,5 +385,6 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="./scripts/products.js"></script>
+<script src="./scripts/calculator.js"></script>
 
 </html>
