@@ -158,6 +158,7 @@
                     <label for="units">Unidades</label>
                     <input type="number" name="units">
                 </div>
+                <button type="submit">Calcular</button>
             </forms>
             <forms class="forms" id="fg">
                 <div>
@@ -256,6 +257,7 @@
                     <label for="units">Unidades</label>
                     <input type="number" name="units">
                 </div>
+                <button type="submit">Calcular</button>
             </forms>
             <forms class="forms" id="pe">
                 <div>
@@ -372,6 +374,7 @@
                     <label for="units">Unidades</label>
                     <input type="number" name="units">
                 </div>
+                <button type="submit">Calcular</button>
             </forms>
         </div>
     </main>

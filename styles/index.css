@@ -72,6 +72,23 @@ nav img{
     width: 100%;
     padding: 10px 10px 50px 10px;
 }
+.forms button{
+    border: none;
+  background-color: var(--logoblue);
+  color: white;
+  border-radius: 2px;
+  cursor: pointer;
+  width: fit-content;
+  padding: 5px 10px 5px 10px;
+  position: relative;
+  top: 20px;
+}
+#fg{
+    grid-template-columns: repeat(5, 0fr); /* Duas colunas de tamanhos iguais */
+}
+#fg select, #fg input{
+    width: fit-content;
+}
 
 .forms div {
     display: flex;
@@ -83,6 +100,14 @@ nav img{
   height: 500px;
   margin: 30px;
 }
-#eb, #fg, #pe{
+#fg, #pe{
     display: none;
+}
+select, input{
+    border: none;
+  background-color: white;
+  padding: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 5px;
 }
