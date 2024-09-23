@@ -11,7 +11,7 @@ nav img{
     cursor: pointer;
 }
 #root{
-    height: 70vh;
+    height: 100%;
     margin: 35px;
     background-color: whitesmoke;
     border-radius: 5px;
@@ -62,21 +62,27 @@ nav img{
 }
 
 #calculator{
+    display: flex; 
+    flex-direction: column;
+}
+.forms {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Duas colunas de tamanhos iguais */
+    gap: 15px; /* Espaçamento entre os elementos */
+    width: 100%;
+    padding: 10px 10px 50px 10px;
+}
+
+.forms div {
     display: flex;
     flex-direction: column;
 }
-#forms{
-    height: 80%;
-    margin: 12px;
-    width: 820px;
-    border-radius: 3px;
-    display: flex;
-  justify-content: center;
-  flex-direction: column;
-  gap: 10px;
+#result_container{
+  border: 1px solid gray;
+  border-radius: 8px;
+  height: 500px;
+  margin: 30px;
 }
-#forms div{
-    display: flex;
-    gap: 1px;
-    flex-direction: column;
+#eb, #fg, #pe{
+    display: none;
 }
