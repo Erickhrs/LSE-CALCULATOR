@@ -158,6 +158,7 @@
                     <label for="units">Unidades</label>
                     <input type="number" name="units">
                 </div>
+                <input name="product" value="eb" style="display: none;">
                 <button type="submit">Calcular</button>
             </form>
             <form class="forms" id="fg">
@@ -379,6 +380,7 @@
                     <label for="units">Unidades</label>
                     <input type="number" name="units">
                 </div>
+                <input name="product" value="pe" style="display: none;">
                 <button type="submit">Calcular</button>
             </form>
         </div>
