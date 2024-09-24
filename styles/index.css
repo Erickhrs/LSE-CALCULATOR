@@ -85,7 +85,7 @@ nav img{
   top: 20px;
 }
 #fg{
-    grid-template-columns: repeat(5, 0fr); /* Duas colunas de tamanhos iguais */
+    grid-template-columns: repeat(6, 0fr); /* Duas colunas de tamanhos iguais */
 }
 #fg select, #fg input{
     width: fit-content;

@@ -220,6 +220,10 @@
                     </select>
                 </div>
                 <div>
+                    <label for="height">Comprimento</label>
+                    <input type="number" name="height">
+                </div>
+                <div>
                     <label for="color">Cores</label>
                     <select name="colors" id="colors_in">
                         <option value="1">1</option>
@@ -257,7 +261,7 @@
                     <label for="units">Unidades</label>
                     <input type="number" name="units">
                 </div>
-                <input name="product" value="ep" style="display: none;">
+                <input name="product" value="fg" style="display: none;">
                 <button type="submit" value="ep">Calcular</button>
             </form>
             <form class="forms" id="pe">
