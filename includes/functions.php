@@ -13,4 +13,20 @@ function getHeight($height) {
         return 'Altura fora do limite das tabelas';
     }
 }
+
+function fee_quality($total, $quality){
+    if ($quality == 'ad'){
+        $total += $total * 0.016;
+        return $total;
+    } else if($quality == 'sad'){
+        $total += $total * 0.019;
+        return $total;
+    }else if($quality == 'mad'){
+        $total += $total * 0.012;
+        return $total;
+    }else {
+        return $total;
+    }
+}
+
 ?>

@@ -135,6 +135,7 @@
                         <option value="mad">Meia Alta Definição</option>
                         <option value="ad">Alta Definição</option>
                         <option value="ad2">AD2</option>
+                        <option value="sad">SAD</option>
                     </select>
                 </div>
                 <div>
@@ -256,6 +257,7 @@
                         <option value="mad">Meia Alta Definição</option>
                         <option value="ad">Alta Definição</option>
                         <option value="ad2">AD2</option>
+                        <option value="sad">SAD</option>
                     </select>
                 </div>
                 <div>
@@ -360,6 +362,7 @@
                         <option value="mad">Meia Alta Definição</option>
                         <option value="ad">Alta Definição</option>
                         <option value="ad2">AD2</option>
+                        <option value="sad">SAD</option>
                     </select>
                 </div>
                 <div>
