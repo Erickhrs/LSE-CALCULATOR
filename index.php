@@ -101,7 +101,7 @@
                 </div>
                 <div>
                     <label for="height">Comprimento(mm)</label>
-                    <input type="number" name="height">
+                    <input type="number" name="height" min="20">
                 </div>
                 <div>
                     <label for="color">Cores</label>
@@ -123,8 +123,11 @@
                 <div>
                     <label for="wire">Tipo de Fio</label>
                     <select name="wire" id="wire_in">
-                        <option value="metalizado">metalizado</option>
+                        <option value="metalizado_pd">Lurex Metalizado Prata e Dourado</option>
+                        <option value="metalizado">Lurex Metalizado Colors</option>
                         <option value="poliester">Poliester</option>
+                        <option value="rayon">Rayon</option>
+                        <option value="twolight">TwoLight</option>
                         <option value="trilobal">trilobal</option>
                     </select>
                 </div>
@@ -157,7 +160,14 @@
                 </div>
                 <div>
                     <label for="units">Unidades</label>
-                    <input type="number" name="units">
+                    <input type="number" name="units" min="5000" value="5000">
+                </div>
+                <div>
+                    <label for="virtual">Loja virtual</label>
+                    <select name="virtual" id="virtual">
+                        <option value="no">Não</option>
+                        <option value="yes">Sim</option>
+                    </select>
                 </div>
                 <input name="product" value="eb" style="display: none;">
                 <button type="submit">Calcular</button>
@@ -222,8 +232,8 @@
                     </select>
                 </div>
                 <div>
-                    <label for="height">Comprimento</label>
-                    <input type="number" name="height">
+                    <label for="height">Comprimento(mm)</label>
+                    <input type="number" name="height" min="20">
                 </div>
                 <div>
                     <label for="color">Cores</label>
@@ -245,8 +255,11 @@
                 <div>
                     <label for="wire">Tipo de Fio</label>
                     <select name="wire" id="wire_in">
-                        <option value="metalizado">metalizado</option>
+                        <option value="metalizado_pd">Lurex Metalizado Prata e Dourado</option>
+                        <option value="metalizado">Lurex Metalizado Colors</option>
                         <option value="poliester">Poliester</option>
+                        <option value="rayon">Rayon</option>
+                        <option value="twolight">TwoLight</option>
                         <option value="trilobal">trilobal</option>
                     </select>
                 </div>
@@ -262,7 +275,15 @@
                 </div>
                 <div>
                     <label for="units">Unidades</label>
-                    <input type="number" name="units">
+                    <input type="number" name="units" min="5000" value="5000">
+                </div>
+
+                <div>
+                    <label for="virtual">Loja virtual</label>
+                    <select name="virtual" id="virtual">
+                        <option value="no">Não</option>
+                        <option value="yes">Sim</option>
+                    </select>
                 </div>
                 <input name="product" value="fg" style="display: none;">
                 <button type="submit" value="ep">Calcular</button>
@@ -328,7 +349,7 @@
                 </div>
                 <div>
                     <label for="height">Comprimento(mm)</label>
-                    <input type="number" name="height">
+                    <input type="number" name="height" min="20">
                 </div>
                 <div>
                     <label for="color">Cores</label>
@@ -350,8 +371,11 @@
                 <div>
                     <label for="wire">Tipo de Fio</label>
                     <select name="wire" id="wire_in">
-                        <option value="metalizado">metalizado</option>
+                        <option value="metalizado_pd">Lurex Metalizado Prata e Dourado</option>
+                        <option value="metalizado">Lurex Metalizado Colors</option>
                         <option value="poliester">Poliester</option>
+                        <option value="rayon">Rayon</option>
+                        <option value="twolight">TwoLight</option>
                         <option value="trilobal">trilobal</option>
                     </select>
                 </div>
@@ -367,7 +391,7 @@
                 </div>
                 <div>
                     <label for="ironed">Engomada</label>
-                    <select name="ironedd" id="ironed_in">
+                    <select name="ironed" id="ironed_in">
                         <option value="no">Não</option>
                         <option value="yes">Sim</option>
                     </select>
@@ -380,8 +404,22 @@
                     </select>
                 </div>
                 <div>
+                    <label for="adhesive">Fita Adesiva</label>
+                    <select name="adhesive" id="adhesive">
+                        <option value="no">Não</option>
+                        <option value="yes">Sim</option>
+                    </select>
+                </div>
+                <div>
                     <label for="units">Unidades</label>
-                    <input type="number" name="units">
+                    <input type="number" name="units" min="5000" value="5000">
+                </div>
+                <div>
+                    <label for="virtual">Loja virtual</label>
+                    <select name="virtual" id="virtual">
+                        <option value="no">Não</option>
+                        <option value="yes">Sim</option>
+                    </select>
                 </div>
                 <input name="product" value="pe" style="display: none;">
                 <button type="submit">Calcular</button>
@@ -389,10 +427,13 @@
         </div>
     </main>
     <div id="result_container">
-
+        <div class="result-item" style="display: flex;justify-content: center;">
+            <span class="label" style="text-align: center;">Vazio</span>
+        </div>
     </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="./scripts/script.js"></script>
 <script src="./scripts/products.js"></script>
 <script src="./scripts/calculator.js"></script>
 

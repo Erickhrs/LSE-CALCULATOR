@@ -4,7 +4,7 @@ require('../includes/functions.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     
-    // Verificação se o parâmetro 'product' está presente e se é 'ep'
+    // Verificação se o parâmetro 'product' está presente
     if (isset($_GET['product'])) {
         
         // Sanitização e validação dos parâmetros de entrada
@@ -13,8 +13,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         $colors = isset($_GET['colors']) ? $mysqli->real_escape_string($_GET['colors']) : '';
         $units = isset($_GET['units']) ? (int)$_GET['units'] : 0;
         $units = str_replace('.', ',', $units);
-        $quality = $_GET['quality'];
-        
+        $quality = isset($_GET['quality']) ? $_GET['quality'] : '';
+        $wire = isset($_GET['wire']) ? $_GET['wire'] : '';
+        $ironed = isset($_GET['ironed']) ? $_GET['ironed'] : '';
+        $iron_on = isset($_GET['iron-on']) ? $_GET['iron-on'] : '';
+        $adhesive = isset($_GET['adhesive']) ? $_GET['adhesive'] : '';
+        $virtual = isset($_GET['virtual']) ? $_GET['virtual'] : '';
+
         // Definindo o nome da coluna com base no valor de width
         $width_column = $width > 60 ? "70-100mm" : $width . "mm";
         
@@ -30,38 +35,66 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             // Verificando se a consulta retornou um resultado
             if ($result && $row = $result->fetch_assoc()) {
                 $total = $row[$width_column] * $units;
-                if ($_GET['product'] == 'eb'){
-                    
-                   $finaltotal = fee_quality($total, $quality);
-                   echo $finaltotal;
+                $finaltotal = $total; // Inicializa o total para retornar
+
+                // Ajustes conforme o tipo de produto
+                if ($_GET['product'] == 'eb') {
+                    $finaltotal = fee_quality($finaltotal, $quality);
+                    $finaltotal = fee_wire($finaltotal, $wire);
+                    $finaltotal = fee_virtual($finaltotal, $virtual);
+                } else if ($_GET['product'] == 'pe') {
+                    $finaltotal = fee_quality($finaltotal, $quality);
+                    $finaltotal = fee_wire($finaltotal, $wire);
+                    $finaltotal = fee_ironed($finaltotal, $ironed);
+                    $finaltotal = fee_ironon($finaltotal, $iron_on);
+                    $finaltotal = fee_adhesive($finaltotal, $adhesive);
+                    $finaltotal = fee_virtual($finaltotal, $virtual);
+                } else if ($_GET['product'] == 'fg') {
+                    $finaltotal = fee_quality($finaltotal, $quality);
+                    $finaltotal = fee_wire($finaltotal, $wire);
+                    $finaltotal = fee_virtual($finaltotal, $virtual);
                 }
-                else if ($_GET['product'] == 'pe'){
 
-                  $finaltotal = fee_quality($total, $quality);
-                  echo $finaltotal;
-                }else if ($_GET['product'] == 'fg'){
+                // Calculando o preço unitário
+                $price_per_label = $units > 0 ? $finaltotal / $units : 0; // Previne divisão por zero
 
-                    $finaltotal = fee_quality($total, $quality);
+                // Criando o array com as informações do produto
+                $product_info = [
+                    'Largura (mm)' => $width,
+                    'Comprimento (mm)' => $height,
+                    'Qtd. de Cores' => $colors,
+                    'Tipo de Fio' => $wire,
+                    'Qualidade' => $quality,
+                    'Tipo de Dobra' => $ironed, // Ou ajuste para a variável correta
+                    'Termocolante' => $adhesive // Ou ajuste para a variável correta
+                ];
 
-                    echo $finaltotal;
-                  }
-                
+                // Criando a resposta com dados do produto e preços
+                $response = [
+                    'product' => $product_info,
+                    'price_per_label' => number_format($price_per_label, 2, ',', '.'), // Preço por etiqueta
+                    'quantity' => $units,
+                    'total' => number_format($finaltotal, 2, ',', '.') // Total formatado
+                ];
+
+                // Retornando como JSON
+                header('Content-Type: application/json');
+                echo json_encode($response);
+
             } else {
-                echo "Nenhum resultado encontrado.";
+                echo json_encode(['error' => "Nenhum resultado encontrado."]);
             }
 
-           
-
         } else {
-            echo "Parâmetros inválidos ou incompletos.";
+            echo json_encode(['error' => "Parâmetros inválidos ou incompletos."]);
         }
 
-    }else {
-        echo "Parâmetro de produto inválido ou ausente.";
+    } else {
+        echo json_encode(['error' => "Parâmetro de produto inválido ou ausente."]);
     }
 
 } else {
     http_response_code(405); // Método não permitido
-    echo "Método não permitido.";
+    echo json_encode(['error' => "Método não permitido."]);
 }
 ?>

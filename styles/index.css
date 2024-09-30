@@ -17,10 +17,12 @@ nav img{
     border-radius: 5px;
     display: flex;
     min-height: 275px;
+    position: relative;
 }
 
 #img{
     width: 40%;
+    min-width: 267px;
     background-image: url("https://www.digitaletextil.com.br/blog/wp-content/uploads/2023/01/blog_capa.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -43,7 +45,7 @@ nav img{
 }
 
 #product_info #title{
-    font-size: 55px;
+font-size: 40px;
   color: white;
   padding: 0;
   margin: 0;
@@ -86,10 +88,22 @@ nav img{
   top: 20px;
 }
 #fg{
-    grid-template-columns: repeat(6, 0fr); /* Duas colunas de tamanhos iguais */
+    grid-template-columns: repeat(5, 0fr); /* Duas colunas de tamanhos iguais */
+}
+#fg button{
+    position: absolute;
+  top: 225px;
 }
 #fg select, #fg input{
     width: fit-content;
+}
+#eb button {
+    position: absolute;
+    top: 260px;
+}
+#pe button{
+  position: absolute;
+  top: 260px;
 }
 
 .forms div {
@@ -99,8 +113,9 @@ nav img{
 #result_container{
   border: 1px solid gray;
   border-radius: 8px;
-  height: 500px;
+  height: 100%;
   margin: 30px;
+  overflow: hidden;
 }
 #fg, #pe{
     display: none;
@@ -112,4 +127,60 @@ select, input{
   border-radius: 4px;
   cursor: pointer;
   margin-top: 5px;
+}
+/* Cada linha de resultado */
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* Último item sem borda inferior */
+.result-item:last-child {
+    border-bottom: none;
+}
+
+/* Label */
+.label {
+    font-weight: bold;
+    color: #333;
+    font-size: 1rem;
+}
+
+/* Valor dinâmico */
+#result_container span {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Fundo alternativo para visual mais bonito */
+.result-item:nth-child(odd) {
+    background-color: #f0f0f0;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    #result_container {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .result-item {
+        font-size: 0.9rem;
+    }
+}
+#buttons_actions{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    padding: 10px;
+}
+#buttons_actions button{
+    border: none;
+  color: white;
+  background-color: green;
+  padding: 8px;
+  border-radius: 7px;
+  cursor: pointer;
 }

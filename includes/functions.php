@@ -16,17 +16,77 @@ function getHeight($height) {
 
 function fee_quality($total, $quality){
     if ($quality == 'ad'){
-        $total += $total * 0.016;
+        $total += $total * 1.6;
         return $total;
     } else if($quality == 'sad'){
-        $total += $total * 0.019;
+        $total += $total * 1.9;
         return $total;
     }else if($quality == 'mad'){
-        $total += $total * 0.012;
+        $total += $total * 1.2;
         return $total;
     }else {
         return $total;
     }
 }
 
+function fee_wire($total, $wire){
+    if ($wire == 'rayon'){
+        $total += $total * 1.2;
+        return $total;
+    } else if($wire == 'twolight'){
+        $total += $total * 1.6;
+        return $total;
+    }
+    else if($wire == 'metalizado_pd'){
+        $total += $total * 2;
+        return $total;
+    }
+    else if($wire == 'metalizado'){
+        $total += $total * 1.3;
+        return $total;
+    }
+    else{
+        return $total;
+    }
+}
+
+function fee_ironed($total, $ironed){
+    if ($ironed == 'yes'){
+        $total += $total * 0.9;
+        return $total;
+    } 
+    else{
+        return $total;
+    }
+}
+
+
+function fee_ironon($total, $ironon){
+    if ($ironon == 'yes'){
+        $total += $total * 1.1;
+        return $total;
+    } 
+    else{
+        return $total;
+    }
+}
+function fee_adhesive($total, $adhesive){
+    if ($adhesive == 'yes'){
+        $total += $total * 1.1;
+        return $total;
+    } 
+    else{
+        return $total;
+    }
+}
+
+function fee_virtual($total, $option){
+    if ($option == 'yes'){
+        $total += $total * 1.1;
+        return $total;
+    } 
+    else{
+        return $total;
+    }
+}
 ?>
