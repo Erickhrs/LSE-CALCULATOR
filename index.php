@@ -60,24 +60,17 @@ session_start();
                         <form action="./actions/login-validate.php" method="post" class="fade-in-down">
                             <div class="form-group first">
                                 <label for="user">user</label>
-                                <input name="user" type="text" class="form-control" placeholder="your-email@gmail.com"
+                                <input name="user" type="text" class="form-control" placeholder="seu nome de usuário"
                                     id="username" />
                             </div>
                             <div class="form-group last mb-3">
                                 <label for="password">Password</label>
-                                <input name="password" type="password" class="form-control" placeholder="Your Password"
+                                <input name="password" type="password" class="form-control" placeholder="sua senha"
                                     id="password" />
                             </div>
 
-                            <div class="d-flex mb-5 align-items-center">
-                                <label class="control control--checkbox mb-0"><span class="caption">Remember me</span>
-                                    <input type="checkbox" checked="checked" />
-                                    <div class="control__indicator"></div>
-                                </label>
-                                <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span>
-                            </div>
 
-                            <input type="submit" value="Log In" class="btn btn-block btn-primary" />
+                            <input type="submit" value="Entrar" class="btn btn-block btn-primary" />
                         </form>
                     </div>
                 </div>

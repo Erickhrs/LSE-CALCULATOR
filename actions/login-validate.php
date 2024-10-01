@@ -2,8 +2,9 @@
 include('../includes/connection.php');
 session_start();
 var_dump($_POST);
+
 if(isset($_POST['user'], $_POST['password'])) {
-    $user = $mysqli->real_escape_string($_POST['user']);
+    $user = $_POST['user'];
     $password = $_POST['password'];
 
     // Busca o usuário pelo user
@@ -12,31 +13,24 @@ if(isset($_POST['user'], $_POST['password'])) {
 
     if($sql_query->num_rows == 1) {
         $usuario = $sql_query->fetch_assoc();
-        $hashedPassword = $usuario['password'];
+        $storedPassword = $usuario['password'];
 
-        // Verifica se a senha está correta
-        if(password_verify($password, $hashedPassword)) {
+        // Verifica se a senha está correta sem criptografia
+        if($password == $storedPassword) {
             // Define as variáveis de sessão
-            $_SESSION['id'] = $usuario['id'];
-            $_SESSION['name'] = $usuario['name'];    
-            $_SESSION['role'] = $usuario['role'];      
-			$_SESSION['picture'] = $usuario['picture'];  	
-            $_SESSION['role'] = $usuario['role'];  	
+            $_SESSION['username'] = $usuario['username']; 	
             session_regenerate_id();
-            header("Location: ../index.php");
+         header("Location: ../calculator.php");
             exit;
         } else {
-            //echo "Senha incorreta";
             $_SESSION['erro'] = "Senha incorreta";
            header("Location: ../index.php");
         }
     } else {
-        //echo "Usuário não encontrado";
-         $_SESSION['erro'] = "Usuário não encontrado";
-       header("Location: ../index.php");
+        $_SESSION['erro'] = "Usuário não encontrado";
+        header("Location: ../index.php");
     }
 } else {
-    //echo "Preencha todos os campos";
     $_SESSION['erro'] = "Preencha todos os campos";
     header("Location: ../index.php");
 }
