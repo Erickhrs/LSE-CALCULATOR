@@ -1,6 +1,7 @@
 <?php
 function getHeight($height) {
-    // Verificando em qual faixa de altura o $height se enquadra
+    
+ 
     if ($height <= 299) {
         return 'Até 299 Metros';
     } elseif ($height >= 300 && $height <= 499) {
@@ -9,6 +10,10 @@ function getHeight($height) {
         return '500-999';
     } elseif ($height >= 1000 && $height <= 2499) {
         return '1000 a 2499';
+    }elseif ($height >= 2500 && $height <= 4499) {
+        return '2500 a 4499';
+    }elseif ($height >= 4500 && $height <= 5000) {
+        return '4500 a 5000';
     } else {
         return 'Altura fora do limite das tabelas';
     }

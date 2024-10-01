@@ -232,11 +232,11 @@
                     </select>
                 </div>
                 <div>
-                    <label for="height">Comprimento(mm)</label>
-                    <input type="number" name="height" min="20">
+                    <label for="height">Comprimento(metros)</label>
+                    <input type="number" name="height" min="300" max="5000">
                 </div>
                 <div>
-                    <label for="color">Cores</label>
+                    <label for=" color">Cores</label>
                     <select name="colors" id="colors_in">
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -273,10 +273,8 @@
                         <option value="sad">SAD</option>
                     </select>
                 </div>
-                <div>
-                    <label for="units">Unidades</label>
-                    <input type="number" name="units" min="5000" value="5000">
-                </div>
+
+
 
                 <div>
                     <label for="virtual">Loja virtual</label>
@@ -285,6 +283,7 @@
                         <option value="yes">Sim</option>
                     </select>
                 </div>
+                <input type="hidden" name="units" min="5000" value="1">
                 <input name="product" value="fg" style="display: none;">
                 <button type="submit" value="ep">Calcular</button>
             </form>
@@ -412,7 +411,7 @@
                 </div>
                 <div>
                     <label for="units">Unidades</label>
-                    <input type="number" name="units" min="5000" value="5000">
+                    <input type="number" name="units" min="100" value="100">
                 </div>
                 <div>
                     <label for="virtual">Loja virtual</label>

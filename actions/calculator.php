@@ -23,6 +23,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         // Definindo o nome da coluna com base no valor de width
         $width_column = $width > 60 ? "70-100mm" : $width . "mm";
         
+        if ($_GET['product'] == 'fg'){
+            $units = ($_GET['height']/100);
+        }
+        
         // Verifica se height e colors são válidos
         if ($height > 0 && !empty($colors)) {
             

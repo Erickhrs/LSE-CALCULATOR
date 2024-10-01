@@ -48,7 +48,7 @@ session_start();
     </script>
     <?php endif; ?>
     <div class="d-lg-flex half">
-        <div id="backgroundImg" class="bg order-1 order-md-2 fade-in" style=""></div>
+        <div id="backgroundImg" class="bg order-1 order-md-2 fade-in"></div>
         <div class="contents order-2 order-md-1">
             <div class="container">
                 <div class="row align-items-center justify-content-center">

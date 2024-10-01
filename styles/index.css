@@ -88,7 +88,7 @@ font-size: 40px;
   top: 20px;
 }
 #fg{
-    grid-template-columns: repeat(5, 0fr); /* Duas colunas de tamanhos iguais */
+    grid-template-columns: repeat(4, 0fr); /* Duas colunas de tamanhos iguais */
 }
 #fg button{
     position: absolute;
