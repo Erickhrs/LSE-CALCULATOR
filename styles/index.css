@@ -184,3 +184,29 @@ select, input{
   border-radius: 7px;
   cursor: pointer;
 }
+.floating-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espaçamento entre os botões */
+}
+
+.floating-button {
+    background-color: #0056b3; /* Cor de fundo do botão */
+    color: white; /* Cor do ícone */
+    border-radius: 50%; /* Botões circulares */
+    width: 50px; /* Largura do botão */
+    height: 50px; /* Altura do botão */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none; /* Remove o sublinhado */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    transition: background-color 0.3s; /* Transição suave */
+}
+
+.floating-button:hover {
+    background-color: #033974; /* Cor ao passar o mouse */
+}

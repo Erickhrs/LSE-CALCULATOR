@@ -1,3 +1,6 @@
+<?php
+require_once('./requires/protect.php');
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -7,14 +10,26 @@
     <link rel="stylesheet" href="./styles/index.css">
     <link rel="stylesheet" href="./styles/global.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="shortcut icon" href="./assets/logo.ico" type="image/x-icon">
+
     <title>Calculadora</title>
 </head>
 
 <body>
+    <div class="floating-buttons">
+        <a href="./home.php" class="floating-button" title="Voltar para a Home">
+            <i class='bx bx-home'></i>
+        </a>
+        <a href="./edit_bd.php" class="floating-button" title="editar infos">
+            <i class='bx bx-edit'></i>
+        </a>
+    </div>
     <nav>
         <img src="./assets/logo.png" alt="logo">
     </nav>
-    <main id="root">
+    <!-- Botões Flutuantes -->
+    <main id="root" style="padding-right: 25px;">
         <div id="img">
             <div id="product_info">
                 <h3 id="title">Etiqueta Bordada</h3>

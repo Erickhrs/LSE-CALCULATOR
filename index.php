@@ -23,8 +23,8 @@ session_start();
     <link rel="stylesheet" href="css/style.css" />
 
 
-    <link rel="shortcut icon" href="./images/logo_white.ico" type="image/x-icon">
-    <title>Login - SGA</title>
+    <link rel="shortcut icon" href="./assets/logo.ico" type="image/x-icon">
+    <title>Login - LSE</title>
 </head>
 
 <body>
