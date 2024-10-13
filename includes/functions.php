@@ -1,7 +1,8 @@
 <?php
-function getHeight($height) {
+function getHeight($units, $width) {
     
- 
+    $height = ($units * $width) / 1000;
+    
     if ($height <= 299) {
         return 'Até 299 Metros';
     } elseif ($height >= 300 && $height <= 499) {
