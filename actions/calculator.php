@@ -40,8 +40,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
             // Verificando se a consulta retornou um resultado
             if ($result && $row = $result->fetch_assoc()) {
-                $total = $row[$width_column] * $units;
-                $finaltotal = $total; // Inicializa o total para retornar
+                $price = $row[$width_column];
+                $eachValue = $price  / (1000/$width);
+                $finaltotal = $eachValue * 1000; // Inicializa o total para retornar
 
                 // Ajustes conforme o tipo de produto
                 if ($_GET['product'] == 'eb') {
@@ -60,10 +61,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                     $finaltotal = fee_wire($finaltotal, $wire);
                     $finaltotal = fee_virtual($finaltotal, $virtual);
                 }
-
+                $finaltotal = $finaltotal * $mil;
                 // Calculando o preço unitário
-                $price_per_label = $units > 0 ? $finaltotal / $units : 0; // Previne divisão por zero
-
                 $product_info = [
                     'Largura (mm)' => $width,
                     'Comprimento (mm)' => $height,
@@ -86,7 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                 // Criando a resposta com dados do produto e preços
                 $response = [
                     'product' => $product_details,
-                    'price_per_label' => number_format($price_per_label, 2, ',', '.'), // Preço por etiqueta
+                    'price_per_label' => number_format($finaltotal, 2, ',', '.'), // Preço por etiqueta
                     'quantity' => $units,
                     'total' => number_format($finaltotal, 2, ',', '.') // Total formatado
                 ];
