@@ -48,7 +48,7 @@ function fee_wire($total, $wire){
         return $total;
     }
     else if($wire == 'metalizado'){
-        $total += $total * 1.3;
+        $total += $total * 2;
         return $total;
     }
     else{
@@ -69,7 +69,7 @@ function fee_ironed($total, $ironed){
 
 function fee_ironon($total, $ironon){
     if ($ironon == 'yes'){
-        $total += $total * 1.1;
+        $total += $total * 2;
         return $total;
     } 
     else{
@@ -78,7 +78,7 @@ function fee_ironon($total, $ironon){
 }
 function fee_adhesive($total, $adhesive){
     if ($adhesive == 'yes'){
-        $total += $total * 1.1;
+        $total += $total * 2;
         return $total;
     } 
     else{
