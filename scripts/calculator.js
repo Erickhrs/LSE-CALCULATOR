@@ -4,9 +4,13 @@ $(document).ready(function () {
         $(formId).on('submit', function (e) {
             e.preventDefault(); // Impede o envio padrão do formulário
             var formData = $(this).serialize();
+
+            // Define a URL de acordo com o formId
+            var url = (formId === '#fg') ? './actions/calculatorfg.php' : './actions/calculator.php';
+
             $.ajax({
                 type: "GET",
-                url: "./actions/calculator.php",
+                url: url,
                 data: formData,
                 success: function (response) {
                     // Exibe os dados no formato HTML desejado
@@ -40,6 +44,4 @@ $(document).ready(function () {
     submitForm('#fg');
     submitForm('#eb');
     submitForm('#pe');
-
-
 });

@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         $width = isset($_GET['width']) && is_numeric($_GET['width']) ? (int)$_GET['width'] : 0;
         $colors = isset($_GET['colors']) ? $mysqli->real_escape_string($_GET['colors']) : '';
         $units = isset($_GET['units']) ? (int)$_GET['units'] : 0;
-        $units = str_replace('.', ',', $units);
+        $units = $_GET['height'];
         $quality = isset($_GET['quality']) ? $_GET['quality'] : '';
         $wire = isset($_GET['wire']) ? $_GET['wire'] : '';
         $ironed = isset($_GET['ironed']) ? $_GET['ironed'] : '';
@@ -23,9 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         // Definindo o nome da coluna com base no valor de width
         $width_column = $width > 60 ? "70-100mm" : $width . "mm";
 
-     
         
-
         // Verifica se height e colors são válidos
         if ($height > 0 && !empty($colors)) {
             
@@ -41,20 +39,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                 $eachValue = $price  / (1000/$width);
                 $finaltotal = $eachValue * 1000; // Inicializa o total para retornar
 
-                // Ajustes conforme o tipo de produto
-                if ($_GET['product'] == 'eb') {
+              if ($_GET['product'] == 'fg') {
                     $finaltotal = fee_quality($finaltotal, $quality);
                     $finaltotal = fee_wire($finaltotal, $wire);
                     $finaltotal = fee_virtual($finaltotal, $virtual);
-                } else if ($_GET['product'] == 'pe') {
-                    $finaltotal = fee_quality($finaltotal, $quality);
-                    $finaltotal = fee_wire($finaltotal, $wire);
-                    $finaltotal = fee_ironed($finaltotal, $ironed);
-                    $finaltotal = fee_ironon($finaltotal, $iron_on);
-                    $finaltotal = fee_adhesive($finaltotal, $adhesive);
-                    $finaltotal = fee_virtual($finaltotal, $virtual);
-                } 
+                }
                 $finaltotal = $finaltotal * $mil;
+                $perProduct = $finaltotal/$units;
                 // Calculando o preço unitário
                 $product_info = [
                     'Largura (mm)' => $width,
@@ -78,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                 // Criando a resposta com dados do produto e preços
                 $response = [
                     'product' => $product_details,
-                    'price_per_label' => number_format($finaltotal, 2, ',', '.'), // Preço por etiqueta
+                    'price_per_label' => number_format($perProduct, 2, ',', '.'), // Preço por etiqueta
                     'quantity' => $units,
                     'total' => number_format($finaltotal, 2, ',', '.') // Total formatado
                 ];
