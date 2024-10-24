@@ -51,10 +51,6 @@ body {
     cursor: pointer;
   }
   
-  .calculator-options button:hover {
-    background-color: #e4e4e9;
-  }
-  
   .actions {
     display: flex;
     flex-direction: column;
@@ -71,8 +67,17 @@ body {
     font-size: 16px;
   }
   
-  .actions button.reset {
+  .calculator-options .reset {
     background-color: #f4b4b4;
+    text-align: center;
+    color: white;
+    border-radius: 20px;
+  }
+  .calculator-options #calculate {
+    background-color: #42B9DF;
+    text-align: center;
+    color: white;
+    border-radius: 20px;
   }
   
   .actions button:hover {
@@ -127,6 +132,7 @@ body {
     border: none;
     cursor: pointer;
     color: white;
+    border-radius: 10px;
   }
   
   .preview-actions button.whatsapp {
@@ -160,3 +166,4 @@ select
     background-color: #C4C4C426;
     text-align: center!important;
   }
+

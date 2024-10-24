@@ -173,7 +173,10 @@ require_once('./requires/protect.php');
                         </select>
                     </div>
                     <input name="product" value="eb" style="display: none;">
-                    <button type="submit">Calcular</button>
+                    <div>
+                        <button class="reset">Resetar</button>
+                        <button type="submit" id="calculate">Calcular</button>
+                    </div>
                 </form>
                 <form class="forms" id="fg">
                     <div>
@@ -292,7 +295,10 @@ require_once('./requires/protect.php');
                     </div>
                     <input type="hidden" name="units" min="5000" value="1">
                     <input name="product" value="fg" style="display: none;">
-                    <button type="submit" value="ep">Calcular</button>
+                    <div>
+                        <button class="reset">Resetar</button>
+                        <button type="submit" id="calculate">Calcular</button>
+                    </div>
                 </form>
                 <form class="forms" id="pe">
                     <div>
@@ -434,12 +440,13 @@ require_once('./requires/protect.php');
                         </select>
                     </div>
                     <input name="product" value="pe" style="display: none;">
-                    <button type="submit">Calcular</button>
+                    <div>
+                        <button class="reset">Resetar</button>
+                        <button type="submit" id="calculate">Calcular</button>
+                    </div>
                 </form>
             </div>
             <div class="actions">
-                <button class="reset">Resetar</button>
-                <button class="calculate">Calcular</button>
             </div>
         </div>
 
